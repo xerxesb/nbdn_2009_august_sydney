@@ -4,8 +4,9 @@ class LocalSettings
   attr_reader :settings
  def initialize
   @settings = {
-#  	:app_config_template => "app.config.xp.template" ,
-    :app_config_template => "app.config.vista.template" ,
+  	:app_config_template => "app.config.xp.template" ,
+    #app_config_template = "app.config.vista.template" ;
+
   	:osql_connectionstring => "-E",
   	:path_to_runtime_log4net_config => "artifacts\log4net.config.xml",
   	:initial_catalog => "#{Project.name}",

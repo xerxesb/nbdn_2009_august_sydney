@@ -38,28 +38,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="infrastructure\searching\AndCriteria.cs" />
+    <Compile Include="infrastructure\searching\BinaryCriteria.cs" />
+    <Compile Include="infrastructure\searching\Criteria.cs" />
     <Compile Include="collections\Genre.cs" />
-    <Compile Include="sorting\DatePublishedSorter.cs" />
-    <Compile Include="sorting\ISorter.cs" />
-    <Compile Include="sorting\TitleSorter.cs" />
-    <Compile Include="specifications\GreaterThanSpecification.cs" />
-    <Compile Include="specifications\LessThanSpecification.cs" />
     <Compile Include="collections\Movie.cs" />
     <Compile Include="collections\MovieLibrary.cs" />
+    <Compile Include="collections\ProducedByCriteria.cs" />
     <Compile Include="collections\ProductionStudio.cs" />
-    <Compile Include="sorting\SortOrder.cs" />
-    <Compile Include="specifications\AndSpecification.cs" />
+    <Compile Include="collections\WasPublishedAfterCriteria.cs" />
     <Compile Include="infrastructure\extensions\CollectionExtensions.cs" />
     <Compile Include="infrastructure\extensions\Iteration.cs" />
     <Compile Include="infrastructure\extensions\StringExtensions.cs" />
     <Compile Include="infrastructure\extensions\TypeCasting.cs" />
     <Compile Include="infrastructure\extensions\TypeExtensions.cs" />
-    <Compile Include="specifications\GenreSpecification.cs" />
-    <Compile Include="specifications\ISpecification.cs" />
-    <Compile Include="specifications\MovieLibraryProductionStudioSpecification.cs" />
-    <Compile Include="specifications\NotSpecification.cs" />
-    <Compile Include="specifications\OrSpecification.cs" />
-    <Compile Include="infrastructure\extensions\SpecificationExtensions.cs" />
+    <Compile Include="infrastructure\searching\CriteriaExtensions.cs" />
+    <Compile Include="infrastructure\searching\OrCriteria.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

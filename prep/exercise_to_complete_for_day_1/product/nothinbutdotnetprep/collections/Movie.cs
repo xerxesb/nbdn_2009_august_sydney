@@ -1,15 +1,11 @@
 using System;
-using nothinbutdotnetprep.infrastructure;
-using nothinbutdotnetprep.specifications;
 
 namespace nothinbutdotnetprep.collections
 {
     public class Movie : IEquatable<Movie>
     {
         public string title { get; set; }
-        
         public ProductionStudio production_studio { get; set; }
-        
         public Genre genre { get; set; }
 
         public int rating { get; set; }
@@ -21,24 +17,30 @@ namespace nothinbutdotnetprep.collections
             return other == null ? false : other.title == title;
         }
 
-        static public ISpecification<Movie> with(Genre genre)
+        public override bool Equals(object obj)
         {
-            return new GenreSpecification(genre);
+            return Equals(obj as Movie);
         }
 
-        static public ISpecification<Movie> produced_by(ProductionStudio studio)
+        public override int GetHashCode()
         {
-            return new MovieLibraryProductionStudioSpecification(studio);
+            return title.GetHashCode();
         }
 
-        static public ISpecification<Movie> made_before(DateTime date_time)
+        static public Predicate<Movie> is_published_by(ProductionStudio studio)
         {
-            return new LessThanSpecification(date_time);
+            return movie => movie.production_studio.Equals(studio);
         }
 
-        static public ISpecification<Movie> made_after(DateTime date_time)
+        static public Predicate<Movie> is_published_after(DateTime date)
         {
-            return new GreaterThanSpecification(date_time);
+            return movie => movie.date_published > date;
+        }
+
+        static public Predicate<Movie> is_published_by_and_after(DateTime date, ProductionStudio studio)
+        {
+            return movie => is_published_by(studio)(movie) &&
+                            is_published_after(date)(movie);
         }
     }
 }

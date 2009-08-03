@@ -19,7 +19,7 @@ namespace nothinbutdotnetprep.tests
             it should_retrieve_the_object_back_downcasted_to_the_target_type = () =>
             {
                 IList<int> list = new List<int>();
-                var to= list.downcast_to<List<int>>();
+                var to = list.downcast_to<List<int>>();
             };
         }
 
