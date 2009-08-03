@@ -1,5 +1,4 @@
 using System;
-using nothinbutdotnetprep.collections;
 
 namespace nothinbutdotnetprep.infrastructure.searching
 {

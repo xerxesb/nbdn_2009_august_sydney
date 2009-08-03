@@ -32,9 +32,5 @@ namespace nothinbutdotnetprep.infrastructure.searching
             return new AnonymousCriteria<Item>(predicate);
         }
 
-        public Criteria<Item> after(PropertyType value)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
