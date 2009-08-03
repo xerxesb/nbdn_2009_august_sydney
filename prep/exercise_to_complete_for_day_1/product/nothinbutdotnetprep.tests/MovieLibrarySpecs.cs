@@ -243,7 +243,6 @@ namespace nothinbutdotnetprep.tests
 
             it should_be_able_to_find_all_movies_published_after_a_certain_year = () =>
             {
-                //var results = sut.all_movies_published_after(2004);
                 var results = sut.all_movies().matching(Where<Movie>.has_an(x => x.date_published.Year).after(2004));
 
                 results.should_only_contain(the_ring, shrek, theres_something_about_mary);
@@ -251,21 +250,21 @@ namespace nothinbutdotnetprep.tests
 
             it should_be_able_to_find_all_movies_published_between_a_certain_range_of_years = () =>
             {
-                var results = sut.all_movies_published_between_years(1982, 2003);
+                var results = sut.all_movies().matching(Where<Movie>.has_an(x => x.date_published.Year).is_between(1982, 2003));
 
                 results.should_only_contain(indiana_jones_and_the_temple_of_doom, a_bugs_life, pirates_of_the_carribean);
             };
 
             it should_be_able_to_find_all_kid_movies = () =>
             {
-                var results = sut.all_kid_movies();
+                var results = sut.all_movies().matching(Where<Movie>.has_a(x => x.genre).equal_to(Genre.kids));
 
                 results.should_only_contain(a_bugs_life, shrek, cars);
             };
 
             it should_be_able_to_find_all_action_movies = () =>
             {
-                var results = sut.all_action_movies();
+                var results = sut.all_movies().matching(Where<Movie>.has_a(x => x.genre).equal_to(Genre.action));
 
                 results.should_only_contain(indiana_jones_and_the_temple_of_doom, pirates_of_the_carribean);
             };

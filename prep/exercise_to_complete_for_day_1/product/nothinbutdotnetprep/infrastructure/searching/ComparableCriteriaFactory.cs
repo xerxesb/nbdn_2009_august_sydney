@@ -20,17 +20,17 @@ namespace nothinbutdotnetprep.infrastructure.searching
                                                                                                 start, end)));
         }
 
+        public Criteria<Item> after(PropertyType value)
+        {
+            return new PropertyCriteria<Item, PropertyType>(accessor, new AfterCriteria<PropertyType>(value));
+        }
+
         public Criteria<Item> equal_to(PropertyType value)
         {
             throw new NotImplementedException();
         }
 
         public Criteria<Item> equal_to_any(params PropertyType[] values)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Criteria<Item> after(PropertyType value)
         {
             throw new NotImplementedException();
         }
