@@ -49,11 +49,6 @@ namespace nothinbutdotnetprep.collections
             return all_movies_matching(new ProducedByCriteria(studio).is_satisfied_by);
         }
 
-        bool create_studio_criteria(Movie movie)
-        {
-            return movie.production_studio.Equals(MovieLibrary.studio);
-        }
-
         IEnumerable<Movie> all_movies_matching(Predicate<Movie> criteria)
         {
             foreach (var movie in list_of_movies)

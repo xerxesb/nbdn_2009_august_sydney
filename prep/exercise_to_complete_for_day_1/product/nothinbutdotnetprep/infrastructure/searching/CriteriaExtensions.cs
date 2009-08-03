@@ -7,4 +7,5 @@ namespace nothinbutdotnetprep.infrastructure.searching
             return new AndCriteria<T>(left, right);
         }
     }
+
 }
