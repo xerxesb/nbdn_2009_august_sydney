@@ -8,6 +8,7 @@ using developwithpassion.bdddoc.core;
 using MbUnit.Framework;
 using nothinbutdotnetprep.collections;
 using nothinbutdotnetprep.infrastructure.extensions;
+using nothinbutdotnetprep.infrastructure.searching;
 
 /* The following set of Contexts (TestFixture) are in place to specify the functionality that you need to complete for the MovieLibrary class.
  * MovieLibrary is an aggregate root for the Movie class. It exposes the ability to search,sort, and iterate over all of the movies that it aggregates.
@@ -221,16 +222,14 @@ namespace nothinbutdotnetprep.tests
 
             it should_be_able_to_find_all_movies_published_by_pixar_or_disney = () =>
             {
-                var results = sut.all_movies_published_by_pixar_or_disney();
+                var results = sut.all_movies().matching(Where<Movie>.has_a(x => x.production_studio)
 
                 results.should_only_contain(a_bugs_life, pirates_of_the_carribean, cars);
             };
 
             it should_be_able_to_find_all_movies_not_published_by_pixar = () =>
             {
-//                var criteria = Where<Movie>.has_a(x => x.production_studio).equal_to(ProductionStudio.Pixar)
-//                                           .and(Where<Movie>.has_a(x => x.rating).greater_than(10); 
-
+                var criteria = Where<Movie>.has_an(x => x.date_published).is_between(range)
                 results.should_not_contain(cars, a_bugs_life);
             };
 
