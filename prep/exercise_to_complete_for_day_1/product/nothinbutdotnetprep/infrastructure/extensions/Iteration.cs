@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using nothinbutdotnetprep.infrastructure.searching;
 
 namespace nothinbutdotnetprep.infrastructure.extensions
 {
@@ -19,6 +20,14 @@ namespace nothinbutdotnetprep.infrastructure.extensions
         public static IEnumerable<int> to(this int start, int end)
         {
             for (var i = start; i <= end; i++) yield return i;
+        }
+
+        public static IEnumerable<T> matching<T>(this IEnumerable<T> items, Criteria<T> criteria)
+        {
+            foreach (var item in items)
+            {
+                if (criteria.is_satisfied_by(item)) yield return item;
+            }
         }
     }
 }

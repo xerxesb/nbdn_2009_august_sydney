@@ -215,27 +215,36 @@ namespace nothinbutdotnetprep.tests
 
             it should_be_able_to_find_all_movies_published_by_pixar = () =>
             {
-                var results = sut.all_movies_published_by_pixar();
+                Func<Movie, ProductionStudio> movie_accessor = x => x.production_studio;
+                var results =
+                    sut.all_movies().matching(
+                        Where<Movie>.has_a(movie_accessor).equal_to(ProductionStudio.Pixar));
 
                 results.should_only_contain(cars, a_bugs_life);
             };
 
             it should_be_able_to_find_all_movies_published_by_pixar_or_disney = () =>
             {
-                var results = sut.all_movies().matching(Where<Movie>.has_a(x => x.production_studio)
+                var results =
+                    sut.all_movies().matching(
+                        Where<Movie>.has_a(x => x.production_studio).equal_to_any(ProductionStudio.Pixar,
+                                                                                  ProductionStudio.Disney));
 
                 results.should_only_contain(a_bugs_life, pirates_of_the_carribean, cars);
             };
 
             it should_be_able_to_find_all_movies_not_published_by_pixar = () =>
             {
-                var criteria = Where<Movie>.has_an(x => x.date_published).is_between(range)
+                var results =
+                    sut.all_movies().matching(
+                        Where<Movie>.has_a(x => x.production_studio).not.equal_to(ProductionStudio.Pixar));
                 results.should_not_contain(cars, a_bugs_life);
             };
 
             it should_be_able_to_find_all_movies_published_after_a_certain_year = () =>
             {
-                var results = sut.all_movies_published_after(2004);
+                //var results = sut.all_movies_published_after(2004);
+                var results = sut.all_movies().matching(Where<Movie>.has_an(x => x.date_published.Year).after(2004));
 
                 results.should_only_contain(the_ring, shrek, theres_something_about_mary);
             };
@@ -272,6 +281,9 @@ namespace nothinbutdotnetprep.tests
 
             it should_be_able_to_sort_all_movies_by_title_descending = () =>
             {
+//                var comparer = Sort<Movie>.by(x => x.title)
+//                                          .then_by()
+//                                          .then_with(other_comparer);
                 var results = sut.sort_all_movies_by_title_descending();
 
                 results.should_only_contain_in_order(theres_something_about_mary, the_ring, shrek, pirates_of_the_carribean, indiana_jones_and_the_temple_of_doom,
