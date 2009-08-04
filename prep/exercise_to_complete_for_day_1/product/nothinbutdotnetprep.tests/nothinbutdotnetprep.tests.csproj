@@ -70,9 +70,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DelegateSpecs.cs" />
+    <Compile Include="events\AlarmClockSpecs.cs" />
     <Compile Include="IterationSpecs.cs" />
     <Compile Include="MovieLibrarySpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="spikes\DelegateSpikes.cs" />
     <Compile Include="StringExtensionsSpecs.cs" />
     <Compile Include="TypeCastingSpecs.cs" />
     <Compile Include="TypeExtensionsSpecs.cs" />

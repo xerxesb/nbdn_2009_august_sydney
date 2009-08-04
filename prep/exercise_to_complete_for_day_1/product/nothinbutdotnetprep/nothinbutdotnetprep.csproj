@@ -38,6 +38,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="events\AlarmClock.cs" />
+    <Compile Include="events\AlarmRingEventArgs.cs" />
     <Compile Include="infrastructure\extensions\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\searching\AfterCriteria.cs" />
     <Compile Include="infrastructure\searching\AndCriteria.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="infrastructure\sorting\PropertyComparer.cs" />
     <Compile Include="infrastructure\sorting\Sort.cs" />
     <Compile Include="infrastructure\sorting\SortComparisonBuilder.cs" />
+    <Compile Include="infrastructure\sorting\SortOrders.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

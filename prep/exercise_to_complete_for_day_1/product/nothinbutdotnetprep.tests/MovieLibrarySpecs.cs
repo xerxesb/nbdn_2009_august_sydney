@@ -216,16 +216,18 @@ namespace nothinbutdotnetprep.tests
 
             it should_be_able_to_find_all_movies_published_by_pixar = () =>
             {
-                Func<Movie, ProductionStudio> movie_accessor = x => x.production_studio;
                 var results =
                     sut.all_movies().matching(
-                        Where<Movie>.has_a(movie_accessor).equal_to(ProductionStudio.Pixar));
+                        Where<Movie>.has_a(x => x.production_studio).equal_to(ProductionStudio.Pixar));
 
                 results.should_only_contain(cars, a_bugs_life);
             };
 
             it should_be_able_to_find_all_movies_published_by_pixar_or_disney = () =>
             {
+
+
+
                 var results =
                     sut.all_movies().matching(
                         Where<Movie>.has_a(x => x.production_studio).equal_to_any(ProductionStudio.Pixar,
@@ -283,13 +285,20 @@ namespace nothinbutdotnetprep.tests
             {
                 //IComparer<Movie> comparer = Sort<Movie>.by(x => x.rating);
 
-                //var results = sut.all_movies().sort_by(x => x.title)
-                //                      .then_by(x => x.rating)
-                //                      .then_by_descending(x => x.rating)
-                //                      .then_with(comparer);
+                var results = sut.all_movies().sort_by(x => x.title)
+                    .then_by(x => x.rating)
+                    .then_by(x => x.date_published,SortOrders.descending)
+                    .then_by(x => x.rating)
+                    .then_by(x => x.rating)
+                    .then_by(x => x.rating);
 
 
-                var results = sut.all_movies().sort_by_descending(x => x.title);
+                var items = new EnumerableSortComparisonBuilder<Movie>(new List<Movie>(), null);
+                foreach (var item in items)
+                {
+                    
+                }
+//                var results = sut.all_movies().by_descending(x => x.title);
 
                 results.should_only_contain_in_order(theres_something_about_mary, the_ring, shrek, pirates_of_the_carribean, indiana_jones_and_the_temple_of_doom,
                                                      cars, a_bugs_life);
@@ -297,7 +306,8 @@ namespace nothinbutdotnetprep.tests
 
             it should_be_able_to_sort_all_movies_by_title_ascending = () =>
             {
-                var results = sut.all_movies().sort_by(x => x.title);
+                var results = sut.all_movies().sort_by(x => x.title)
+                        .then_by(x => x.rating);
 
                 results.should_only_contain_in_order(a_bugs_life, cars, indiana_jones_and_the_temple_of_doom, pirates_of_the_carribean, shrek, the_ring, theres_something_about_mary);
             };
@@ -324,13 +334,14 @@ namespace nothinbutdotnetprep.tests
                 //Dreamworks
                 //Universal
                 //Disney
-                var results = sut.sort_all_movies_by_movie_studio_and_year_published();
+//                var results = sut.sort_all_movies_by_movie_studio_and_year_published();
                 /* should return a set of results 
                  * in the collection sorted by the rating of the production studio (not the movie rating) and year published. for this exercise you need to take the studio ratings
                  * into effect, which means that you first have to sort by movie studio (taking the ranking into account) and then by the
                  * year published. For this test you cannot add any extra properties/fields to either the ProductionStudio or
                  * Movie classes.*/
 
+                var results = new List<Movie>();
                 results.should_only_contain_in_order(the_ring, theres_something_about_mary, a_bugs_life, cars, shrek, indiana_jones_and_the_temple_of_doom,
                                                      pirates_of_the_carribean);
             };

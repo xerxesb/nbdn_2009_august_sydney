@@ -47,7 +47,7 @@ namespace nothinbutdotnetprep.infrastructure.extensions
             return new EnumerableSortComparisonBuilder<Item>(items, Sort<Item>.by(property_accessor));
         }
 
-        public static EnumerableSortComparisonBuilder<Item> sort_by_descending<Item, PropertyItem>(this IEnumerable<Item> items, Func<Item, PropertyItem> property_accessor)
+        public static EnumerableSortComparisonBuilder<Item> by_descending<Item, PropertyItem>(this IEnumerable<Item> items, Func<Item, PropertyItem> property_accessor)
         where PropertyItem : IComparable<PropertyItem>
         {
             return new EnumerableSortComparisonBuilder<Item>(items, Sort<Item>.by_descending(property_accessor));

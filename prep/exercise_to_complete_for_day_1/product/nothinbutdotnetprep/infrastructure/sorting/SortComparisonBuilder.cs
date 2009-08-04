@@ -12,16 +12,16 @@ namespace nothinbutdotnetprep.infrastructure.sorting
             this.comparer = comparer;
         }
 
+        public SortComparisonBuilder<Item> then_by<PropertyType>(Func<Item, PropertyType> accessor, SortOrder order)
+            where PropertyType : IComparable<PropertyType>
+        {
+            return then_using(order.apply_to(new PropertyComparer<Item, PropertyType>(accessor)));
+        }
+
         public SortComparisonBuilder<Item> then_by<PropertyType>(Func<Item, PropertyType> accessor)
             where PropertyType : IComparable<PropertyType>
         {
-            return then_using(new PropertyComparer<Item, PropertyType>(accessor));
-        }
-
-        public SortComparisonBuilder<Item> then_by_descending<PropertyType>(Func<Item, PropertyType> accessor)
-            where PropertyType : IComparable<PropertyType>
-        {
-            return then_using(new ReverseComparer<Item>(new PropertyComparer<Item, PropertyType>(accessor)));
+            return then_by(accessor, SortOrders.ascending);
         }
 
         public SortComparisonBuilder<Item> then_using(IComparer<Item> comparer)

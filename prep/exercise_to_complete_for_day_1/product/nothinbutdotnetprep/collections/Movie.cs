@@ -22,6 +22,9 @@ namespace nothinbutdotnetprep.collections
             return Equals(obj as Movie);
         }
 
+        public void do_something() {
+            Console.Out.WriteLine("Hello {0}",title);
+        }
         public override int GetHashCode()
         {
             return title.GetHashCode();
