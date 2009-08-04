@@ -1,5 +1,4 @@
 using System;
-using System.Threading;
 
 namespace nothinbutdotnetprep.events
 {
@@ -17,21 +16,17 @@ namespace nothinbutdotnetprep.events
             OnRing();
         }
 
-        private void OnRing()
+        void OnRing()
         {
-            var temp_alarm_event = ring;
-            if (temp_alarm_event != null) 
-            {
-                temp_alarm_event(this, new AlarmRingEventArgs 
-                {
-                    time_the_alarm_was_started = DateTime.Now, 
-                    time_the_alarm_rang = DateTime.Now.AddMilliseconds(_ringAfterMilliseconds)
-                });
-            }
+            ring(this,EventArgs.Empty);
         }
 
-        public delegate AlarmRingEventArgs AlarmRingDelegate(object sender, AlarmRingEventArgs e);
-        public event AlarmRingDelegate ring;
 
+        public event EventHandler ring = delegate {};
+
+        public void ring_alarm()
+        {
+            OnRing();
+        }
     }
 }

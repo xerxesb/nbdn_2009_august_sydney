@@ -40,6 +40,9 @@
   <ItemGroup>
     <Compile Include="events\AlarmClock.cs" />
     <Compile Include="events\AlarmRingEventArgs.cs" />
+    <Compile Include="events\EventPublisher.cs" />
+    <Compile Include="events\Events.cs" />
+    <Compile Include="events\Person.cs" />
     <Compile Include="infrastructure\extensions\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\searching\AfterCriteria.cs" />
     <Compile Include="infrastructure\searching\AndCriteria.cs" />
