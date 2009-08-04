@@ -281,15 +281,15 @@ namespace nothinbutdotnetprep.tests
 
             it should_be_able_to_sort_all_movies_by_title_descending = () =>
             {
-                IComparer<Movie> comparer = Sort<Movie>.by(x => x.rating);
+                //IComparer<Movie> comparer = Sort<Movie>.by(x => x.rating);
 
-                var results = sut.all_movies().sort_by(x => x.title)
-                                      .then_by(x => x.rating)
-                                      .then_by_descending(x => x.rating)
-                                      .then_with(comparer);
-                                
+                //var results = sut.all_movies().sort_by(x => x.title)
+                //                      .then_by(x => x.rating)
+                //                      .then_by_descending(x => x.rating)
+                //                      .then_with(comparer);
 
-                var results = sut.all_movies().sort(Sort<Movie>.by_descending(movie => movie.title));
+
+                var results = sut.all_movies().sort_by_descending(x => x.title);
 
                 results.should_only_contain_in_order(theres_something_about_mary, the_ring, shrek, pirates_of_the_carribean, indiana_jones_and_the_temple_of_doom,
                                                      cars, a_bugs_life);
@@ -297,7 +297,7 @@ namespace nothinbutdotnetprep.tests
 
             it should_be_able_to_sort_all_movies_by_title_ascending = () =>
             {
-                var results = sut.all_movies().sort(Sort<Movie>.by(movie => movie.title));
+                var results = sut.all_movies().sort_by(x => x.title);
 
                 results.should_only_contain_in_order(a_bugs_life, cars, indiana_jones_and_the_temple_of_doom, pirates_of_the_carribean, shrek, the_ring, theres_something_about_mary);
             };
@@ -311,7 +311,7 @@ namespace nothinbutdotnetprep.tests
 
             it should_be_able_to_sort_all_movies_by_date_published_ascending = () =>
             {
-                var results = sut.all_movies().sort(Sort<Movie>.by(movie => movie.date_published));
+                var results = sut.all_movies().sort_by(x => x.date_published);
 
                 results.should_only_contain_in_order(indiana_jones_and_the_temple_of_doom, a_bugs_life, pirates_of_the_carribean, cars, the_ring, shrek, theres_something_about_mary);
             };
