@@ -29,5 +29,15 @@ namespace nothinbutdotnetprep.infrastructure.extensions
                 if (criteria.is_satisfied_by(item)) yield return item;
             }
         }
+
+        public static IEnumerable<T> sort<T>(this IEnumerable<T> items, IComparer<T> comparer)
+        {
+            var items_to_sort = new List<T>(items);
+            items_to_sort.Sort(comparer);
+            foreach (var item in items_to_sort)
+            {
+                yield return item;
+            }
+        }
     }
 }

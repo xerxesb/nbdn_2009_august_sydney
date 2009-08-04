@@ -5,14 +5,14 @@ namespace nothinbutdotnetprep.infrastructure.sorting
 {
     public class Sort<Item>
     {
-        static public void by<PropertyType>(Func<Item, PropertyType> property)
+        static public SortComparisonBuilder<Item> by<PropertyType>(Func<Item, PropertyType> property) where PropertyType : IComparable<PropertyType>
         {
-            throw new NotImplementedException();
+            return new SortComparisonBuilder<Item>(new PropertyComparer<Item, PropertyType>(property));
         }
 
-        static public void by_descending<PropertyType>(Func<Item, PropertyType> property)
+        static public SortComparisonBuilder<Item> by_descending<PropertyType>(Func<Item, PropertyType> property) where PropertyType : IComparable<PropertyType>
         {
-            throw new NotImplementedException();
+            return new SortComparisonBuilder<Item>(new ReverseComparer<Item>(new PropertyComparer<Item, PropertyType>(property)));            
         }
 
         static public void with(IComparer<Item> comparer)
