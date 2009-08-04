@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using nothinbutdotnetprep.infrastructure.searching;
+using nothinbutdotnetprep.infrastructure.sorting;
 
 namespace nothinbutdotnetprep.infrastructure.extensions
 {
@@ -38,6 +39,12 @@ namespace nothinbutdotnetprep.infrastructure.extensions
             {
                 yield return item;
             }
+        }
+
+        public static EnumerableSortComparisonBuilder<Item> sort_by<Item, PropertyItem>(this IEnumerable<Item> items, Func<Item,PropertyItem> property_accessor)
+            where PropertyItem : IComparable<PropertyItem>
+        {
+            return new EnumerableSortComparisonBuilder<Item>(items, Sort<Item>.by(property_accessor));
         }
     }
 }

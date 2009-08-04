@@ -18,6 +18,12 @@ namespace nothinbutdotnetprep.infrastructure.sorting
             return then_using(new PropertyComparer<Item, PropertyType>(accessor));
         }
 
+        public SortComparisonBuilder<Item> then_by_descending<PropertyType>(Func<Item, PropertyType> accessor)
+            where PropertyType : IComparable<PropertyType>
+        {
+            return then_using(new ReverseComparer<Item>(new PropertyComparer<Item, PropertyType>(accessor)));
+        }
+
         public SortComparisonBuilder<Item> then_using(IComparer<Item> comparer)
         {
             this.comparer = new ChainedComparer<Item>(this.comparer, comparer);

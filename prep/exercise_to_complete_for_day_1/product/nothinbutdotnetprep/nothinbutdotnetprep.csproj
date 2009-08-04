@@ -70,6 +70,7 @@
     <Compile Include="infrastructure\searching\SimpleCriteriaFactory.cs" />
     <Compile Include="infrastructure\searching\Where.cs" />
     <Compile Include="infrastructure\sorting\ChainedComparer.cs" />
+    <Compile Include="infrastructure\sorting\EnumerableSortComparisonBuilder.cs" />
     <Compile Include="infrastructure\sorting\ReverseComparer.cs" />
     <Compile Include="infrastructure\sorting\PropertyComparer.cs" />
     <Compile Include="infrastructure\sorting\Sort.cs" />

@@ -281,6 +281,8 @@ namespace nothinbutdotnetprep.tests
 
             it should_be_able_to_sort_all_movies_by_title_descending = () =>
             {
+                IComparer<Movie> comparer = Sort<Movie>.by(x => x.rating);
+
                 var results = sut.all_movies().sort_by(x => x.title)
                                       .then_by(x => x.rating)
                                       .then_by_descending(x => x.rating)
