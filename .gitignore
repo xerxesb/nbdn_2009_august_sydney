@@ -2,6 +2,7 @@ obj
 bin
 .svn
 _ReSharper.*
+artifacts
 *.csproj.user
 *.resharper.user
 *.resharper
