@@ -1,0 +1,12 @@
+#![Front Controller Sequence]
+browser:WebBrowser
+frontController:FrontController
+commandRegistry:CommandRegistry
+/command:Command
+
+
+browser:frontController.process(url)
+frontController:command=commandRegistry.get_command_to_handle(request)
+commandRegistry:command=command.new()
+frontController:response=command.process()
+
