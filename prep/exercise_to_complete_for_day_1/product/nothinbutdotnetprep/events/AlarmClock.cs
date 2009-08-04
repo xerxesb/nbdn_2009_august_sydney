@@ -22,6 +22,7 @@ namespace nothinbutdotnetprep.events
         }
 
 
+        [PublishEvent(Events.the_alarm_rang)]
         public event EventHandler ring = delegate {};
 
         public void ring_alarm()

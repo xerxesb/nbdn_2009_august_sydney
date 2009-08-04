@@ -70,7 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DelegateSpecs.cs" />
-    <Compile Include="events\AlarmClockSpecs.cs" />
     <Compile Include="events\EventPublisherSpecs.cs" />
     <Compile Include="IterationSpecs.cs" />
     <Compile Include="MovieLibrarySpecs.cs" />
