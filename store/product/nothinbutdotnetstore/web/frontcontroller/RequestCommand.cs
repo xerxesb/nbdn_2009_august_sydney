@@ -1,7 +1,7 @@
 namespace nothinbutdotnetstore.web.frontcontroller
 {
-    public interface RequestCommand
+    public interface RequestCommand : RawRequestCommand
     {
-        void process(IncomingRequest request);
+        bool can_handle(IncomingRequest request);
     }
 }
