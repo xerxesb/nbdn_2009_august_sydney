@@ -281,6 +281,12 @@ namespace nothinbutdotnetprep.tests
 
             it should_be_able_to_sort_all_movies_by_title_descending = () =>
             {
+                var results = sut.all_movies().sort_by(x => x.title)
+                                      .then_by(x => x.rating)
+                                      .then_by_descending(x => x.rating)
+                                      .then_with(comparer);
+                                
+
                 var results = sut.all_movies().sort(Sort<Movie>.by_descending(movie => movie.title));
 
                 results.should_only_contain_in_order(theres_something_about_mary, the_ring, shrek, pirates_of_the_carribean, indiana_jones_and_the_temple_of_doom,

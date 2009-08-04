@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="infrastructure\extensions\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\searching\AfterCriteria.cs" />
     <Compile Include="infrastructure\searching\AndCriteria.cs" />
     <Compile Include="infrastructure\searching\AnonymousCriteria.cs" />

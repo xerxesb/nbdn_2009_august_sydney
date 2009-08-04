@@ -5,7 +5,7 @@ namespace nothinbutdotnetprep.infrastructure.sorting
 {
     public class PropertyComparer<Item, PropertyType> : IComparer<Item> where PropertyType : IComparable<PropertyType>
     {
-        readonly Func<Item, PropertyType> accessor;
+        Func<Item, PropertyType> accessor;
 
         public PropertyComparer(Func<Item,PropertyType> accessor) {
             this.accessor = accessor;
