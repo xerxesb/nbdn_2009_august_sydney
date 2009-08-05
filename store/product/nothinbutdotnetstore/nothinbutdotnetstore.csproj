@@ -44,6 +44,7 @@
     <Compile Include="infrastructure\Specification.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewAllMainDepartments.cs" />
+    <Compile Include="web\commands\ViewMainDepartmentsCommand.cs" />
     <Compile Include="web\frontcontroller\CommandRegistry.cs" />
     <Compile Include="web\frontcontroller\CommandRegistryImplementation.cs" />
     <Compile Include="web\frontcontroller\FrontController.cs" />
@@ -55,6 +56,14 @@
     <Compile Include="web\frontcontroller\RawRequestCommand.cs" />
     <Compile Include="web\frontcontroller\RequestCommand.cs" />
     <Compile Include="web\frontcontroller\RequestCommandImplementation.cs" />
+    <Compile Include="web\models\Department.cs" />
+    <Compile Include="web\presenters\Presenter.cs" />
+    <Compile Include="web\services\PresenterFactory.cs" />
+    <Compile Include="web\services\ViewFactory.cs" />
+    <Compile Include="web\services\viewmaindepartments\DepartmentRegistry.cs" />
+    <Compile Include="web\services\ViewModelFactory.cs" />
+    <Compile Include="web\viewmodels\ViewModel.cs" />
+    <Compile Include="web\views\View.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

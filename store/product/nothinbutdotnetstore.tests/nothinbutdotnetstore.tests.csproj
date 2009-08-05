@@ -76,6 +76,7 @@
     <Compile Include="utility\ObjectMother.cs" />
     <Compile Include="web\CommandRegistrySpecs.cs" />
     <Compile Include="web\FrontControllerSpecs.cs" />
+    <Compile Include="web\ViewMainDepartmentsCommandSpec.cs" />
     <Compile Include="web\RawHandlerSpecs.cs" />
     <Compile Include="web\RequestCommandSpecs.cs" />
   </ItemGroup>
