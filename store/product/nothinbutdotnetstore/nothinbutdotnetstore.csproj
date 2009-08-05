@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="dto\DepartmentItem.cs" />
     <Compile Include="dto\ProductItem.cs" />
+    <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\Id.cs" />
     <Compile Include="infrastructure\Specification.cs" />
     <Compile Include="MessageGenerator.cs" />
@@ -51,27 +52,33 @@
     <Compile Include="web\application\catalogbrowsing\ViewMainDepartments.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewProductsInDepartments.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewSubDepartmentsInDepartment.cs" />
-    <Compile Include="web\frontcontroller\CommandRegistry.cs" />
-    <Compile Include="web\frontcontroller\CommandRegistryImplementation.cs" />
-    <Compile Include="web\frontcontroller\DisplayEngine.cs" />
-    <Compile Include="web\frontcontroller\DisplayEngineImplementation.cs" />
-    <Compile Include="web\frontcontroller\FrontController.cs" />
-    <Compile Include="web\frontcontroller\FrontControllerImplementation.cs" />
-    <Compile Include="web\frontcontroller\IncomingRequest.cs" />
-    <Compile Include="web\frontcontroller\IncomingRequestFactory.cs" />
-    <Compile Include="web\frontcontroller\ItemRender.cs" />
-    <Compile Include="web\frontcontroller\ItemRendererRegistry.cs" />
-    <Compile Include="web\frontcontroller\MissingRequestCommand.cs" />
-    <Compile Include="web\frontcontroller\RawHandler.cs" />
-    <Compile Include="web\frontcontroller\RawRequestCommand.cs" />
-    <Compile Include="web\frontcontroller\RequestCommand.cs" />
-    <Compile Include="web\frontcontroller\RequestCommandImplementation.cs" />
-    <Compile Include="web\frontcontroller\TransferAction.cs" />
-    <Compile Include="web\frontcontroller\WebFormViewFactory.cs" />
-    <Compile Include="web\frontcontroller\ViewInformation.cs" />
-    <Compile Include="web\frontcontroller\ViewPage.cs" />
-    <Compile Include="web\frontcontroller\WebFormViewRegistry.cs" />
-    <Compile Include="web\frontcontroller\WebFormRender.cs" />
+    <Compile Include="web\core\frontcontroller\CommandRegistry.cs" />
+    <Compile Include="web\core\frontcontroller\CommandRegistryImplementation.cs" />
+    <Compile Include="web\core\frontcontroller\DisplayEngine.cs" />
+    <Compile Include="web\core\frontcontroller\DisplayEngineImplementation.cs" />
+    <Compile Include="web\core\frontcontroller\FrontController.cs" />
+    <Compile Include="web\core\frontcontroller\FrontControllerImplementation.cs" />
+    <Compile Include="web\core\frontcontroller\IncomingRequest.cs" />
+    <Compile Include="web\core\frontcontroller\IncomingRequestFactory.cs" />
+    <Compile Include="web\core\frontcontroller\ItemRender.cs" />
+    <Compile Include="web\core\frontcontroller\ItemRendererRegistry.cs" />
+    <Compile Include="web\core\frontcontroller\MissingRequestCommand.cs" />
+    <Compile Include="web\core\frontcontroller\RawHandler.cs" />
+    <Compile Include="web\core\frontcontroller\RawRequestCommand.cs" />
+    <Compile Include="web\core\frontcontroller\RequestCommand.cs" />
+    <Compile Include="web\core\frontcontroller\RequestCommandImplementation.cs" />
+    <Compile Include="web\core\frontcontroller\stubs\StubIncomingRequest.cs" />
+    <Compile Include="web\core\frontcontroller\stubs\StubItemRendererRegistry.cs" />
+    <Compile Include="web\core\frontcontroller\stubs\StubWebFormViewRegistry.cs" />
+    <Compile Include="web\core\frontcontroller\TransferAction.cs" />
+    <Compile Include="web\core\frontcontroller\ViewPageImplementation.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\core\frontcontroller\WebFormViewFactory.cs" />
+    <Compile Include="web\core\frontcontroller\ViewInformation.cs" />
+    <Compile Include="web\core\frontcontroller\ViewPage.cs" />
+    <Compile Include="web\core\frontcontroller\WebFormViewRegistry.cs" />
+    <Compile Include="web\core\frontcontroller\WebFormRender.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

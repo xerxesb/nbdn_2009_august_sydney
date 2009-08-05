@@ -1,6 +1,6 @@
 using nothinbutdotnetstore.infrastructure;
 using nothinbutdotnetstore.tasks;
-using nothinbutdotnetstore.web.frontcontroller;
+using nothinbutdotnetstore.web.core.frontcontroller;
 
 namespace nothinbutdotnetstore.web.application.catalogbrowsing
 {

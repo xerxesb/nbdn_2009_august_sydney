@@ -1,6 +1,6 @@
 using nothinbutdotnetstore.infrastructure;
 
-namespace nothinbutdotnetstore.web.frontcontroller
+namespace nothinbutdotnetstore.web.core.frontcontroller
 {
     public class RequestCommandImplementation : RequestCommand
     {

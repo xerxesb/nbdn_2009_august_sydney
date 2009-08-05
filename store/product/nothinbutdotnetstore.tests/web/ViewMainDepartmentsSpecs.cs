@@ -6,7 +6,7 @@ using developwithpassion.bdddoc.core;
 using nothinbutdotnetstore.dto;
 using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.web.application.catalogbrowsing;
-using nothinbutdotnetstore.web.frontcontroller;
+using nothinbutdotnetstore.web.core.frontcontroller;
 using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.tests.web

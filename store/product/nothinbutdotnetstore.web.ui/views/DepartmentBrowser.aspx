@@ -1,15 +1,19 @@
 <%@ MasterType VirtualPath="Store.master" %>
 <%@ Page Language="C#" AutoEventWireup="true" 
-Inherits="System.Web.UI.Page" MasterPageFile="Store.master" %>
+Inherits="nothinbutdotnetstore.web.ui.views.DepartmentBrowser" CodeFile="~/views/DepartmentBrowser.aspx.cs"  MasterPageFile="Store.master" %>
+<%@ Import Namespace="nothinbutdotnetstore.infrastructure"%>
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
     <p class="ListHead">Select An Department</p>
 
             <table>            
-		<!-- for each of the main departments in the store -->
+            <% this.model.each(item =>
+{%>
         	<tr class="ListItem">
                		 <td>                     
-                    
+                    <%=item.name%>
                 	</td>
-           	 </tr>        
+           	 </tr>    
+           	 <%
+              }); %>
 	    </table>            
 </asp:Content>

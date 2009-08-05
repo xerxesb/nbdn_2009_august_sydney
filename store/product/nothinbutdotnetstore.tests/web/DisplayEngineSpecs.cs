@@ -2,7 +2,7 @@
  using developwithpassion.bdd.contexts;
  using developwithpassion.bdd.mbunit.standard.observations;
  using developwithpassion.bdddoc.core;
- using nothinbutdotnetstore.web.frontcontroller;
+ using nothinbutdotnetstore.web.core.frontcontroller;
  using developwithpassion.bdd;
  using Rhino.Mocks;
 

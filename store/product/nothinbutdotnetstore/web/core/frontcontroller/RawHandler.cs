@@ -1,16 +1,14 @@
-using System;
 using System.Web;
 
-namespace nothinbutdotnetstore.web.frontcontroller
+namespace nothinbutdotnetstore.web.core.frontcontroller
 {
     public class RawHandler : IHttpHandler
     {
         FrontController front_controller;
 
-        static public IncomingRequestFactory request_factory = delegate
-        {
-            throw new Exception("You need to implement this");
-        };
+        static public IncomingRequestFactory request_factory = x => null;
+
+        public RawHandler():this(new FrontControllerImplementation()) {}
 
         public RawHandler(FrontController front_controller)
         {

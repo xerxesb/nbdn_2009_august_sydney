@@ -1,8 +1,10 @@
-namespace nothinbutdotnetstore.web.frontcontroller
+namespace nothinbutdotnetstore.web.core.frontcontroller
 {
     public class FrontControllerImplementation : FrontController
     {
         CommandRegistry command_registry;
+
+        public FrontControllerImplementation():this(new CommandRegistryImplementation()) {}
 
         public FrontControllerImplementation(CommandRegistry command_registry)
         {

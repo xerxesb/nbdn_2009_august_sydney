@@ -1,4 +1,4 @@
-namespace nothinbutdotnetstore.web.frontcontroller
+namespace nothinbutdotnetstore.web.core.frontcontroller
 {
     public interface IncomingRequest
     {

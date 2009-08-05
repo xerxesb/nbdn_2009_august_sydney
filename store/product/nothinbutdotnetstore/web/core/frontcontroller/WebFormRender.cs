@@ -1,7 +1,8 @@
 using System.Web;
 using System.Web.Compilation;
+using nothinbutdotnetstore.web.core.frontcontroller.stubs;
 
-namespace nothinbutdotnetstore.web.frontcontroller
+namespace nothinbutdotnetstore.web.core.frontcontroller
 {
     public class WebFormRender : ItemRender
     {
@@ -10,6 +11,8 @@ namespace nothinbutdotnetstore.web.frontcontroller
 
 
         WebFormViewRegistry view_registry;
+
+        public WebFormRender() : this(new StubWebFormViewRegistry()) {}
 
         public WebFormRender(WebFormViewRegistry view_registry)
         {

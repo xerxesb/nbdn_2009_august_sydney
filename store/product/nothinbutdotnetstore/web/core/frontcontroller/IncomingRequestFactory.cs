@@ -1,7 +1,6 @@
 using System.Web;
 
-namespace nothinbutdotnetstore.web.frontcontroller
+namespace nothinbutdotnetstore.web.core.frontcontroller
 {
     public delegate IncomingRequest IncomingRequestFactory(HttpContext context);
-
 }

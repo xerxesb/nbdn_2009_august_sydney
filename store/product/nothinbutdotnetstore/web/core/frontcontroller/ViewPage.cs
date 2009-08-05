@@ -1,6 +1,6 @@
 using System.Web;
 
-namespace nothinbutdotnetstore.web.frontcontroller
+namespace nothinbutdotnetstore.web.core.frontcontroller
 {
     public interface ViewPage<Model> : IHttpHandler
     {

@@ -4,12 +4,12 @@ using developwithpassion.bdd.contexts;
 using developwithpassion.bdd.mbunit;
 using developwithpassion.bdd.mbunit.standard.observations;
 using developwithpassion.bdddoc.core;
-using nothinbutdotnetstore.web.frontcontroller;
+using nothinbutdotnetstore.web.core.frontcontroller;
 using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.tests.web
 {
-    public class WebFormRendererSpecs
+    public class WebFormRenderSpecs
     {
         public abstract class concern : observations_for_a_sut_with_a_contract<ItemRender,
                                             WebFormRender> {}

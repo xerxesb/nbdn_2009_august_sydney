@@ -1,10 +1,12 @@
-namespace nothinbutdotnetstore.web.frontcontroller
+using nothinbutdotnetstore.web.core.frontcontroller.stubs;
+
+namespace nothinbutdotnetstore.web.core.frontcontroller
 {
     public class DisplayEngineImplementation : DisplayEngine
     {
         ItemRendererRegistry renderers;
 
-        public DisplayEngineImplementation() {}
+        public DisplayEngineImplementation():this(new StubItemRendererRegistry()) {}
 
         public DisplayEngineImplementation(ItemRendererRegistry renderers)
         {
