@@ -3,6 +3,7 @@ using developwithpassion.bdd.contexts;
 using developwithpassion.bdd.mbunit;
 using developwithpassion.bdd.mbunit.standard.observations;
 using developwithpassion.bdddoc.core;
+using MbUnit.Framework;
 using nothinbutdotnetstore.web.frontcontroller;
 using Rhino.Mocks;
 
@@ -23,7 +24,6 @@ namespace nothinbutdotnetstore.tests.web
             static protected IList<RequestCommand> commands;
             static protected IncomingRequest request;
         }
-
 
         [Concern(typeof (CommandRegistry))]
         public class when_getting_a_command_for_a_request_that_it_has_a_command_for : concern

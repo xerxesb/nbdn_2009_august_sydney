@@ -1,0 +1,13 @@
+﻿As a shopper
+  I want to be able to view a list of all the main departments in the store
+  so that I can see if the store caters to my general shopping needs.
+
+As a shopper
+  I want to be able to view a list of all of the subdepartments in a department
+  so that I can filter out the specific departments that I want to look at.
+
+As a shopper
+  I want to be able to view a list of the products in a department 
+  so that I can see potential products that I may want to add to my shopping cart
+
+

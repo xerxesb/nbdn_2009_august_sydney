@@ -8,6 +8,8 @@ namespace nothinbutdotnetstore.web.frontcontroller
     {
         IEnumerable<RequestCommand> commands;
 
+        public CommandRegistryImplementation() {}
+
         public CommandRegistryImplementation(IEnumerable<RequestCommand> commands)
         {
             this.commands = commands;
