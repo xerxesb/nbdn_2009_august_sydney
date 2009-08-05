@@ -39,8 +39,7 @@ namespace nothinbutdotnetstore.tests.web
 
                 view_factory = (name, type) =>
                 {
-                    page_name_to_display = name;
-                    page_type_to_create = type;
+                    info_used_to_create_type = new WebFormViewInformation(name, type);
                     return page;
                 };
 
@@ -58,6 +57,8 @@ namespace nothinbutdotnetstore.tests.web
             it should_display_the_page_populated_with_the_information_it_needs_to_display = () =>
             {
                 page.model.should_be_equal_to(23);
+                info_used_to_create_type.type.should_be_equal_to(page_info.type);
+                info_used_to_create_type.path.should_be_equal_to(page_info.path);
             };
 
             static ViewFactory view_factory;
@@ -66,6 +67,7 @@ namespace nothinbutdotnetstore.tests.web
             static WebFormViewInformation page_info;
             static string page_name_to_display;
             static Type page_type_to_create;
+            static WebFormViewInformation info_used_to_create_type;
         }
     }
 }
