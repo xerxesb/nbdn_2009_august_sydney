@@ -47,6 +47,7 @@
     <Compile Include="web\commands\ViewMainDepartmentsCommand.cs" />
     <Compile Include="web\frontcontroller\CommandRegistry.cs" />
     <Compile Include="web\frontcontroller\CommandRegistryImplementation.cs" />
+    <Compile Include="web\frontcontroller\DisplayEngine.cs" />
     <Compile Include="web\frontcontroller\FrontController.cs" />
     <Compile Include="web\frontcontroller\FrontControllerImplementation.cs" />
     <Compile Include="web\frontcontroller\IncomingRequest.cs" />

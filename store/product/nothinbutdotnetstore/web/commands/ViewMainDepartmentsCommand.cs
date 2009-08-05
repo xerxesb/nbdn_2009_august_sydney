@@ -9,27 +9,19 @@ namespace nothinbutdotnetstore.web.commands
 {
     public class ViewMainDepartmentsCommand : RawRequestCommand
     {
-        readonly PresenterFactory presenter_factory;
-        readonly ViewFactory view_factory;
-        readonly ViewModelFactory view_model_factory;
-        readonly DepartmentRegistry department_registry;
+        DepartmentRegistry department_registry;
+        DisplayEngine display_engine;
 
+
+        public ViewMainDepartmentsCommand(DepartmentRegistry department_registry, DisplayEngine display_engine)
+        {
+            this.department_registry = department_registry;
+            this.display_engine = display_engine;
+        }
 
         public void process(IncomingRequest request)
         {
-            var departments = department_registry.get_main_departments();
-            var view_model = view_model_factory.create(departments);
-            var view = view_factory.create();
-            var presenter = presenter_factory.create(view_model, view);
-            presenter.show();
-        }
-
-        public ViewMainDepartmentsCommand(PresenterFactory presenter_factory, ViewFactory view_factory, ViewModelFactory view_model_factory, DepartmentRegistry department_registry)
-        {
-            this.presenter_factory = presenter_factory;
-            this.view_factory = view_factory;
-            this.view_model_factory = view_model_factory;
-            this.department_registry = department_registry;
+            display_engine.display(department_registry.get_main_departments());
         }
     }
 }
