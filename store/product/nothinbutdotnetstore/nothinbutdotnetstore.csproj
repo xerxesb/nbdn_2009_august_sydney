@@ -47,6 +47,7 @@
     <Compile Include="infrastructure\Specification.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />
+    <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewMainDepartments.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewProductsInDepartments.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewSubDepartmentsInDepartment.cs" />
@@ -66,7 +67,7 @@
     <Compile Include="web\frontcontroller\RequestCommand.cs" />
     <Compile Include="web\frontcontroller\RequestCommandImplementation.cs" />
     <Compile Include="web\frontcontroller\TransferAction.cs" />
-    <Compile Include="web\frontcontroller\ViewFactory.cs" />
+    <Compile Include="web\frontcontroller\WebFormViewFactory.cs" />
     <Compile Include="web\frontcontroller\ViewInformation.cs" />
     <Compile Include="web\frontcontroller\ViewPage.cs" />
     <Compile Include="web\frontcontroller\WebFormViewRegistry.cs" />

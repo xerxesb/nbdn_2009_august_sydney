@@ -1,4 +1,5 @@
 using nothinbutdotnetstore.tasks;
+using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.frontcontroller;
 
 namespace nothinbutdotnetstore.web.application.catalogbrowsing
@@ -8,7 +9,7 @@ namespace nothinbutdotnetstore.web.application.catalogbrowsing
         DisplayEngine display_engine;
         CatalogTasks catalog_tasks;
 
-        public ViewMainDepartments() {}
+        public ViewMainDepartments() :this(new DisplayEngineImplementation(),new StubCatalogTasks()){}
 
         public ViewMainDepartments(DisplayEngine display_engine, CatalogTasks catalog_tasks)
         {

@@ -14,6 +14,7 @@ namespace nothinbutdotnetstore.tests.web
         public abstract class concern : observations_for_a_sut_with_a_contract<ItemRender,
                                             WebFormRender> {}
 
+
         public class Page<T> : ViewPage<T>
         {
             public T model { get; set; }
@@ -35,39 +36,58 @@ namespace nothinbutdotnetstore.tests.web
             context c = () =>
             {
                 page = new Page<int>();
-                page_info = new WebFormViewInformation { type = typeof(ViewPage<int>), path = "blah.aspx" };
+                page_info = new WebFormViewInformation {type = typeof (ViewPage<int>), path = "blah.aspx"};
 
-                view_factory = (name, type) =>
+                transfer_action = (handler, preserve) =>
                 {
-                    info_used_to_create_type = new WebFormViewInformation(name, type);
+                    handler_that_was_run = handler;
+                };
+
+                web_form_view_factory = (path, type) =>
+                {
+                    info_used_to_create_type = new WebFormViewInformation(path, type);
                     return page;
                 };
 
                 web_form_view_registry = the_dependency<WebFormViewRegistry>();
                 web_form_view_registry.Stub(x => x.get_view_information_for<int>()).Return(page_info);
-                change(() => WebFormRender.view_factory).to(view_factory);
+
+                change(() => WebFormRender.web_form_view_factory).to(web_form_view_factory);
+                change(() => WebFormRender.transfer_action).to(transfer_action);
             };
 
             because b = () =>
             {
-                sut.render(23);
+                sut.render(item_to_render);
             };
 
 
             it should_display_the_page_populated_with_the_information_it_needs_to_display = () =>
             {
-                page.model.should_be_equal_to(23);
+                page.model.should_be_equal_to(item_to_render);
                 info_used_to_create_type.type.should_be_equal_to(page_info.type);
                 info_used_to_create_type.path.should_be_equal_to(page_info.path);
+                handler_that_was_run.should_be_equal_to(page);
             };
 
-            static ViewFactory view_factory;
+            static WebFormViewFactory web_form_view_factory;
+            static TransferAction transfer_action;
             static Page<int> page;
             static WebFormViewRegistry web_form_view_registry;
             static WebFormViewInformation page_info;
-            static string page_name_to_display;
-            static Type page_type_to_create;
             static WebFormViewInformation info_used_to_create_type;
+            static int item_to_render = 42;
+            static IHttpHandler handler_that_was_run;
+        }
+
+        public class when_created_without_swapping_its_defaults : concern {
+
+            it should_throw_an_exception = () =>
+            {
+                
+
+
+            };
         }
     }
 }

@@ -4,6 +4,8 @@ namespace nothinbutdotnetstore.web.frontcontroller
     {
         ItemRendererRegistry renderers;
 
+        public DisplayEngineImplementation() {}
+
         public DisplayEngineImplementation(ItemRendererRegistry renderers)
         {
             this.renderers = renderers;
