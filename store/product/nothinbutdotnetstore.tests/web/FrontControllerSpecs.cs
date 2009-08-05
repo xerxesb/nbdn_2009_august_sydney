@@ -3,6 +3,7 @@ using developwithpassion.bdd.contexts;
 using developwithpassion.bdd.mbunit.standard.observations;
 using developwithpassion.bdddoc.core;
 using nothinbutdotnetstore.web.frontcontroller;
+using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.tests.web
 {
@@ -18,6 +19,8 @@ namespace nothinbutdotnetstore.tests.web
             {
                 command = an<RequestCommand>();
                 request = an<IncomingRequest>();
+                command_registry = the_dependency<CommandRegistry>();
+                command_registry.Stub(x => x.get_command_that_can_handle(request)).Return(command);
             };
 
 
@@ -34,6 +37,7 @@ namespace nothinbutdotnetstore.tests.web
 
             static RequestCommand command;
             static IncomingRequest request;
+            static CommandRegistry command_registry;
         }
     }
 }

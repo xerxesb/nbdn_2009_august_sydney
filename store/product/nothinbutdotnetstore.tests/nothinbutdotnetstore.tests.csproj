@@ -75,9 +75,14 @@
     <Compile Include="utility\empty_test_fixture_for_test_driven.cs" />
     <Compile Include="utility\ObjectMother.cs" />
     <Compile Include="web\CommandRegistrySpecs.cs" />
+    <Compile Include="web\DisplayEngineSpecs.cs" />
     <Compile Include="web\FrontControllerSpecs.cs" />
     <Compile Include="web\RawHandlerSpecs.cs" />
     <Compile Include="web\RequestCommandSpecs.cs" />
+    <Compile Include="web\ViewMainDepartmentsSpecs.cs" />
+    <Compile Include="web\ViewProductsInDepartmentSpecs.cs" />
+    <Compile Include="web\ViewSubDepartmentsInDepartmentSpecs.cs" />
+    <Compile Include="web\WebFormRendererSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\nothinbutdotnetstore\nothinbutdotnetstore.csproj">
