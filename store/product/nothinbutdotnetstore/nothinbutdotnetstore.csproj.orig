@@ -46,14 +46,23 @@
     <Compile Include="infrastructure\Id.cs" />
     <Compile Include="infrastructure\Specification.cs" />
     <Compile Include="MessageGenerator.cs" />
+<<<<<<< HEAD:store/product/nothinbutdotnetstore/nothinbutdotnetstore.csproj
     <Compile Include="tasks\CatalogTasks.cs" />
     <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewMainDepartments.cs" />
+    <Compile Include="web\application\catalogbrowsing\ViewProductsInDepartments.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewSubDepartmentsInDepartment.cs" />
     <Compile Include="web\frontcontroller\CommandRegistry.cs" />
     <Compile Include="web\frontcontroller\CommandRegistryImplementation.cs" />
     <Compile Include="web\frontcontroller\DisplayEngine.cs" />
     <Compile Include="web\frontcontroller\DisplayEngineImplementation.cs" />
+=======
+    <Compile Include="web\application\catalogbrowsing\ViewAllMainDepartments.cs" />
+    <Compile Include="web\commands\ViewMainDepartmentsCommand.cs" />
+    <Compile Include="web\frontcontroller\CommandRegistry.cs" />
+    <Compile Include="web\frontcontroller\CommandRegistryImplementation.cs" />
+    <Compile Include="web\frontcontroller\DisplayEngine.cs" />
+>>>>>>> 2e37a08169b0e624627a8635926f166bd0a8d2b8:store/product/nothinbutdotnetstore/nothinbutdotnetstore.csproj
     <Compile Include="web\frontcontroller\FrontController.cs" />
     <Compile Include="web\frontcontroller\FrontControllerImplementation.cs" />
     <Compile Include="web\frontcontroller\IncomingRequest.cs" />
@@ -65,12 +74,23 @@
     <Compile Include="web\frontcontroller\RawRequestCommand.cs" />
     <Compile Include="web\frontcontroller\RequestCommand.cs" />
     <Compile Include="web\frontcontroller\RequestCommandImplementation.cs" />
+<<<<<<< HEAD:store/product/nothinbutdotnetstore/nothinbutdotnetstore.csproj
     <Compile Include="web\frontcontroller\TransferAction.cs" />
     <Compile Include="web\frontcontroller\WebFormViewFactory.cs" />
     <Compile Include="web\frontcontroller\ViewInformation.cs" />
     <Compile Include="web\frontcontroller\ViewPage.cs" />
     <Compile Include="web\frontcontroller\WebFormViewRegistry.cs" />
     <Compile Include="web\frontcontroller\WebFormRender.cs" />
+=======
+    <Compile Include="web\models\Department.cs" />
+    <Compile Include="web\presenters\Presenter.cs" />
+    <Compile Include="web\services\PresenterFactory.cs" />
+    <Compile Include="web\services\ViewFactory.cs" />
+    <Compile Include="web\services\viewmaindepartments\DepartmentRegistry.cs" />
+    <Compile Include="web\services\ViewModelFactory.cs" />
+    <Compile Include="web\viewmodels\ViewModel.cs" />
+    <Compile Include="web\views\View.cs" />
+>>>>>>> 2e37a08169b0e624627a8635926f166bd0a8d2b8:store/product/nothinbutdotnetstore/nothinbutdotnetstore.csproj
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
