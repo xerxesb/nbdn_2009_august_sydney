@@ -20,7 +20,14 @@ namespace nothinbutdotnetstore.infrastructure.containers.basic
 
         public object instance_of(Type dependency_type)
         {
-            return type_dependency_resolver.resolve_concrete_type(dependency_type);
+            try
+            {
+                return type_dependency_resolver.resolve_concrete_type(dependency_type);
+            }
+            catch (Exception e)
+            {
+                throw new ContainerResolverException(e, dependency_type);
+            }
         }
 
         public IEnumerable<DependencyType> all_instances_of<DependencyType>()
