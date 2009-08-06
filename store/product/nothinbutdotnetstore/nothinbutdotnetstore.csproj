@@ -48,6 +48,8 @@
     <Compile Include="dto\DepartmentItem.cs" />
     <Compile Include="dto\ProductItem.cs" />
     <Compile Include="infrastructure\containers\basic\BasicContainer.cs" />
+    <Compile Include="infrastructure\containers\basic\ContainerResolverException.cs" />
+    <Compile Include="infrastructure\containers\basic\ResolverNotRegisteredException.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\Id.cs" />
     <Compile Include="infrastructure\Specification.cs" />
