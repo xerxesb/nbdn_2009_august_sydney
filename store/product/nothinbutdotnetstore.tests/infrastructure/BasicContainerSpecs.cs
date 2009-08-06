@@ -48,9 +48,12 @@ namespace nothinbutdotnetstore.tests.infrastructure
         [Concern(typeof (BasicContainer))]
         public class when_getting_an_instance_of_a_component_by_using_its_type : concern
         {
-            context c = () => {
-            
+            context c = () => 
+            {
+                sql_connection = new SqlConnection();
 
+                type_dependency_resolver = the_dependency<TypeDependencyResovler>();
+                type_dependency_resolver.Stub(x => x.resolve_concrete_type(typeof(IDbConnection))).Return(sql_connection);
             };
 
             because b = () => {
@@ -66,6 +69,7 @@ namespace nothinbutdotnetstore.tests.infrastructure
 
             static object result;
             static SqlConnection sql_connection;
+            static TypeDependencyResovler type_dependency_resolver;
         }
 
         [Concern(typeof (BasicContainer))]
