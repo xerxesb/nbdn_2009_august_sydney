@@ -8,6 +8,7 @@ namespace nothinbutdotnetstore.tasks
     public interface ContainerResolverRegistry : IEnumerable<ContainerItemResolver>
     {
         void register_resolver_for<Item>(Func<object> factory);
+        void register_resolver_for<Interface,Implementation>();
     }
 
     public class ContainerResolverRegistryImplementation : ContainerResolverRegistry
@@ -22,6 +23,11 @@ namespace nothinbutdotnetstore.tasks
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        public void register_resolver_for<Interface, Implementation>()
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerator<ContainerItemResolver> GetEnumerator()

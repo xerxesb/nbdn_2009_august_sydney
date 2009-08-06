@@ -17,6 +17,11 @@ namespace nothinbutdotnetstore.tasks.startup
         public void run()
         {
             RawHandler.request_factory = context => new StubIncomingRequest();
+
+//            registry.register_a<FrontController>()
+//                    .implemented_by<FrontControllerImplementation>()
+//                    .as_singleton();
+
             registry.register_resolver_for<FrontController>(
                 () => new FrontControllerImplementation(IOC.get().instance_of<CommandRegistry>()));
             registry.register_resolver_for<CommandRegistry>(
