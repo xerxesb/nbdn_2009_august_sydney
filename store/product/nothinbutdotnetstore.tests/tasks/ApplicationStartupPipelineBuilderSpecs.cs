@@ -1,5 +1,4 @@
- using System;
- using System.Collections.Generic;
+using System.Collections.Generic;
  using developwithpassion.bdd;
  using developwithpassion.bdd.contexts;
  using developwithpassion.bdd.mbunit.standard.observations;
