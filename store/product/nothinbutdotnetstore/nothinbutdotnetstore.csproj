@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="dto\DepartmentItem.cs" />
     <Compile Include="dto\ProductItem.cs" />
+    <Compile Include="infrastructure\Command.cs" />
     <Compile Include="infrastructure\containers\basic\BasicContainer.cs" />
     <Compile Include="infrastructure\containers\basic\ContainerItemResolver.cs" />
     <Compile Include="infrastructure\containers\basic\ContainerItemResolverImplementation.cs" />
@@ -56,8 +57,14 @@
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\Id.cs" />
     <Compile Include="infrastructure\Specification.cs" />
+    <Compile Include="tasks\AddResolverToContainer.cs" />
     <Compile Include="tasks\ApplicationStartup.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />
+    <Compile Include="tasks\startup\ApplicationStartupCommand.cs" />
+    <Compile Include="tasks\startup\ConfigureCoreServices.cs" />
+    <Compile Include="tasks\startup\ConfigureFrontController.cs" />
+    <Compile Include="tasks\startup\ConfigureTheApplicationRoutes.cs" />
+    <Compile Include="tasks\startup\ConfigureTheServiceLayer.cs" />
     <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewMainDepartments.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewProductsInDepartments.cs" />

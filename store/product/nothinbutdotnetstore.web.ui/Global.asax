@@ -4,7 +4,7 @@
 
         private void Application_Start(object sender, EventArgs e)
         {
-            new ApplicationStartup().run();
+          ApplicationStartup.start_the_application();
         }
 
 

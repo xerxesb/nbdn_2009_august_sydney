@@ -7,9 +7,9 @@ namespace nothinbutdotnetstore.infrastructure.containers.basic
 {
     public class BasicContainer : Container
     {
-        IList<ContainerItemResolver> resolvers;
+        IEnumerable<ContainerItemResolver> resolvers;
 
-        public BasicContainer(IList<ContainerItemResolver> resolvers)
+        public BasicContainer(IEnumerable<ContainerItemResolver> resolvers)
         {
             this.resolvers = resolvers;
         }

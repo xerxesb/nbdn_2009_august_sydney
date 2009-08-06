@@ -1,3 +1,4 @@
+using System;
 using System.Web;
 using developwithpassion.commons.core.infrastructure.containers;
 
@@ -7,7 +8,10 @@ namespace nothinbutdotnetstore.web.core.frontcontroller
     {
         FrontController front_controller;
 
-        static public IncomingRequestFactory request_factory = x => null;
+        static public IncomingRequestFactory request_factory = x =>
+        {
+            throw new Exception("This needs to be set during application startup");
+        };
 
         public RawHandler() : this(IOC.get().instance_of<FrontController>()) {}
 

@@ -21,7 +21,7 @@ namespace nothinbutdotnetstore.tests.infrastructure
             context c = () =>
             {
                 resolvers = new List<ContainerItemResolver>();
-                provide_a_basic_sut_constructor_argument(resolvers);
+                provide_a_basic_sut_constructor_argument<IEnumerable<ContainerItemResolver>>(resolvers);
             };
 
             static protected IList<ContainerItemResolver> resolvers;
