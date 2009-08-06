@@ -33,6 +33,7 @@ namespace nothinbutdotnetstore.tests.infrastructure
             context c = () =>
             {
                 sql_connection = new SqlConnection();
+                container_dependency_resolver = an<ContainerItemResolver>();
 
                 container_dependency_resolver.Stub(x => x.is_resolver_for(typeof (IDbConnection))).Return(true);
                 container_dependency_resolver.Stub(x => x.resolve()).Return(sql_connection);

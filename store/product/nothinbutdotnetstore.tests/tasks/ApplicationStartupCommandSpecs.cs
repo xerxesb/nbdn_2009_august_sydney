@@ -24,13 +24,14 @@ namespace nothinbutdotnetstore.tests.tasks
             because b = () =>
             {
                 all_startup_commands = typeof (ApplicationStartupCommand).Assembly.GetTypes()
-                    .Where(type => typeof (ApplicationStartupCommand).IsAssignableFrom(type));
+                    .Where(type => typeof (ApplicationStartupCommand).IsAssignableFrom(type) &&
+                    type.IsClass);
             };
 
 
             it should_support_the_constructor_that_allows_it_to_be_used_in_the_startup_pipeline = () =>
             {
-                all_startup_commands.each(type => type.GetType().only_has_a_constructor_with(typeof (ContainerResolverRegistry)));
+                all_startup_commands.each(type => type.only_has_a_constructor_with(typeof (ContainerResolverRegistry)));
             };
 
             static IEnumerable<Type> all_startup_commands;

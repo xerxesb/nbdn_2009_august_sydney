@@ -1,8 +1,9 @@
+using nothinbutdotnetstore.infrastructure;
 using nothinbutdotnetstore.tasks.startup;
 
 namespace nothinbutdotnetstore.tasks
 {
-    public class ApplicationStartup : ApplicationStartupCommand
+    public class ApplicationStartup : Command
     {
         static public void start_the_application()
         {
