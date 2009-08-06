@@ -28,17 +28,8 @@ namespace nothinbutdotnetstore.tasks.startup
                 () => new CommandRegistryImplementation(IOC.get().instance_of<IEnumerable<RequestCommand>>()));
 
             registry.register_resolver_for<DisplayEngine>(
-                () => new DisplayEngineImplementation(IOC.get().instance_of<ItemRendererRegistry>()));
-            registry.register_resolver_for<ItemRendererRegistry>(() => new ItemRendererRegistryImplementation());
+                () => new DisplayEngineImplementation(IOC.get().instance_of<ItemRenderer>()));
             registry.register_resolver_for<WebFormViewRegistry>(() => new StubWebFormViewRegistry());
-        }
-    }
-
-    public class ItemRendererRegistryImplementation : ItemRendererRegistry
-    {
-        public ItemRender get_renderer_for<Item>()
-        {
-            return new WebFormRender(IOC.get().instance_of<WebFormViewRegistry>());
         }
     }
 }

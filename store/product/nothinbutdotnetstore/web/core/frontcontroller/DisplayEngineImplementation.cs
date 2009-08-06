@@ -2,17 +2,16 @@ namespace nothinbutdotnetstore.web.core.frontcontroller
 {
     public class DisplayEngineImplementation : DisplayEngine
     {
-        ItemRendererRegistry renderers;
+        ItemRenderer renderer;
 
-
-        public DisplayEngineImplementation(ItemRendererRegistry renderers)
+        public DisplayEngineImplementation(ItemRenderer renderer)
         {
-            this.renderers = renderers;
+            this.renderer = renderer;
         }
 
         public void display<Item>(Item item)
         {
-            renderers.get_renderer_for<Item>().render(item);
+            renderer.render(item);
         }
     }
 }

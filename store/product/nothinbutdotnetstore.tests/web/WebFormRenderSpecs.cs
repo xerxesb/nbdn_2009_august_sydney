@@ -11,8 +11,8 @@ namespace nothinbutdotnetstore.tests.web
 {
     public class WebFormRenderSpecs
     {
-        public abstract class concern : observations_for_a_sut_with_a_contract<ItemRender,
-                                            WebFormRender> {}
+        public abstract class concern : observations_for_a_sut_with_a_contract<ItemRenderer,
+                                            WebFormRenderer> {}
 
 
         public class Page<T> : ViewPage<T>
@@ -30,7 +30,7 @@ namespace nothinbutdotnetstore.tests.web
             }
         }
 
-        [Concern(typeof (WebFormRender))]
+        [Concern(typeof (WebFormRenderer))]
         public class when_rendering_an_item : concern
         {
             context c = () =>
@@ -52,8 +52,8 @@ namespace nothinbutdotnetstore.tests.web
                 web_form_view_registry = the_dependency<WebFormViewRegistry>();
                 web_form_view_registry.Stub(x => x.get_view_information_for<int>()).Return(page_info);
 
-                change(() => WebFormRender.web_form_view_factory).to(web_form_view_factory);
-                change(() => WebFormRender.transfer_action).to(transfer_action);
+                change(() => WebFormRenderer.web_form_view_factory).to(web_form_view_factory);
+                change(() => WebFormRenderer.transfer_action).to(transfer_action);
             };
 
             because b = () =>

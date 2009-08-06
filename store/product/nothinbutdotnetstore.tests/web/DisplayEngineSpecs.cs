@@ -22,9 +22,7 @@ namespace nothinbutdotnetstore.tests.web
              context c = () =>
              {
                  items = new List<int>();
-                 render = an<ItemRender>();
-                 renderer_registry = the_dependency<ItemRendererRegistry>();
-                 renderer_registry.Stub(x => x.get_renderer_for<IEnumerable<int>>()).Return(render);
+                 renderer = the_dependency<ItemRenderer>();
              };
 
              because b = () =>
@@ -35,12 +33,11 @@ namespace nothinbutdotnetstore.tests.web
         
              it should_tell_the_item_renderer_for_the_item_to_render_the_item = () =>
              {
-                 render.received(x => x.render(items));
+                 renderer.received(x => x.render(items));
              };
 
-             static ItemRender render;
              static IEnumerable<int> items;
-             static ItemRendererRegistry renderer_registry;
+             static ItemRenderer renderer;
          }
      }
  }

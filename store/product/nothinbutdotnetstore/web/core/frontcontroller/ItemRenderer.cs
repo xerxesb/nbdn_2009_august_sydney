@@ -1,6 +1,6 @@
 namespace nothinbutdotnetstore.web.core.frontcontroller
 {
-    public interface ItemRender
+    public interface ItemRenderer
     {
         void render<Item>(Item item);
     }
