@@ -11,10 +11,10 @@ namespace nothinbutdotnetstore.tasks
 
         public void run()
         {
-            //            Start.by<ConfigureCoreServices>()
-            //                 .followed_by<ConfigureFrontController>()
-            //                 .followed_by<ConfigureTheServiceLayer>()
-            //                 .finish_by<ConfigureTheApplicationRoutes>();
+            Start.by<ConfigureCoreServices>()
+                 .followed_by<ConfigureFrontController>()
+                 .followed_by<ConfigureTheServiceLayer>()
+                 .finish_by<ConfigureTheApplicationRoutes>();
         }
     }
 }
