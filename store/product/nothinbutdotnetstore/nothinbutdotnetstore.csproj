@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="domain\Department.cs" />
     <Compile Include="domain\DepartmentRepository.cs" />
+    <Compile Include="domain\Product.cs" />
+    <Compile Include="domain\ProductRepository.cs" />
     <Compile Include="dto\DepartmentItem.cs" />
     <Compile Include="dto\ProductItem.cs" />
     <Compile Include="infrastructure\Command.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="tasks\CatalogTasks.cs" />
     <Compile Include="tasks\CatalogTasksImplementation.cs" />
     <Compile Include="tasks\DepartmentItemMapper.cs" />
+    <Compile Include="tasks\ProductItemMapper.cs" />
     <Compile Include="tasks\startup\ApplicationStartupCommand.cs" />
     <Compile Include="tasks\startup\ApplicationStartupCommandFactoryImplementation.cs" />
     <Compile Include="tasks\startup\ApplicationStartupPipelineBuilder.cs" />
