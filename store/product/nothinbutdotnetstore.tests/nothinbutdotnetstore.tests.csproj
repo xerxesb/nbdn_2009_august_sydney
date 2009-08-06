@@ -75,6 +75,7 @@
     <Compile Include="infrastructure\EnumerableExtensionsSpecs.cs" />
     <Compile Include="infrastructure\IsSpecificTypeSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tasks\ApplicationStartupSpecs.cs" />
     <Compile Include="utility\empty_test_fixture_for_test_driven.cs" />
     <Compile Include="utility\ObjectMother.cs" />
     <Compile Include="web\CommandRegistrySpecs.cs" />
@@ -92,9 +93,6 @@
       <Project>{922EF2FE-820B-4ED5-9D64-7D716E135719}</Project>
       <Name>nothinbutdotnetstore</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="tasks\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,7 +9,6 @@ namespace nothinbutdotnetstore.web.core.frontcontroller
         static public WebFormViewFactory web_form_view_factory = BuildManager.CreateInstanceFromVirtualPath;
         static public TransferAction transfer_action = (handler, preserve) => HttpContext.Current.Server.Transfer(handler, preserve);
 
-
         WebFormViewRegistry view_registry;
 
         public WebFormRender(WebFormViewRegistry view_registry)

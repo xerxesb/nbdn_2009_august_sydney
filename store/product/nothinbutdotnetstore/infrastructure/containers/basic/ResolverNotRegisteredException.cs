@@ -6,7 +6,7 @@ namespace nothinbutdotnetstore.infrastructure.containers.basic
     {
         public Type type_that_could_not_be_resolved { get; private set; }
 
-        public ResolverNotRegisteredException(Type type_that_had_no_resolver)
+        public ResolverNotRegisteredException(Type type_that_had_no_resolver) : base("Could not resolve type for " + type_that_had_no_resolver)
         {
             this.type_that_could_not_be_resolved = type_that_had_no_resolver;
         }
