@@ -15,7 +15,7 @@ namespace nothinbutdotnetstore.infrastructure.containers.basic
 
         public Dependency instance_of<Dependency>()
         {
-            return (Dependency)instance_of(typeof (Dependency));
+            return (Dependency)instance_of(typeof(Dependency));
         }
 
         public object instance_of(Type dependency_type)

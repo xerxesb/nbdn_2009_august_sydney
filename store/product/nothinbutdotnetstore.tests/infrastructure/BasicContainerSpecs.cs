@@ -24,11 +24,18 @@ namespace nothinbutdotnetstore.tests.infrastructure
             context c = () => 
             {
                 sql_connection = new SqlConnection();
-
                 type_dependency_resolver = the_dependency<TypeDependencyResovler>();
-                type_dependency_resolver.Stub(x => x.resolve_concrete_type<IDbConnection>()).Return(sql_connection);
+                type_dependency_resolver.Stub(x => x.resolve_concrete_type(typeof(IDbConnection))).Return(sql_connection);
             };
 
+            static protected IDbConnection result;
+            static protected SqlConnection sql_connection;
+            static TypeDependencyResovler type_dependency_resolver;
+        }
+
+        [Concern(typeof (BasicContainer))]
+        public class when_getting_an_instance_of_a_component_using_generic_call : when_getting_an_instance_of_a_component
+        {
             because b = () => 
             {
                 result = sut.instance_of<IDbConnection>();
@@ -40,25 +47,14 @@ namespace nothinbutdotnetstore.tests.infrastructure
                 result.should_be_equal_to(sql_connection);
             };
 
-            static IDbConnection result;
-            static SqlConnection sql_connection;
-            static TypeDependencyResovler type_dependency_resolver;
         }
 
         [Concern(typeof (BasicContainer))]
-        public class when_getting_an_instance_of_a_component_by_using_its_type : concern
+        public class when_getting_an_instance_of_a_component_by_using_its_type : when_getting_an_instance_of_a_component
         {
-            context c = () => 
-            {
-                sql_connection = new SqlConnection();
-
-                type_dependency_resolver = the_dependency<TypeDependencyResovler>();
-                type_dependency_resolver.Stub(x => x.resolve_concrete_type(typeof(IDbConnection))).Return(sql_connection);
-            };
-
             because b = () => {
 
-                result = sut.instance_of(typeof(IDbConnection));
+                result = (IDbConnection) sut.instance_of(typeof(IDbConnection));
             };
 
 
@@ -66,10 +62,6 @@ namespace nothinbutdotnetstore.tests.infrastructure
             {
                 result.should_be_equal_to(sql_connection);
             };
-
-            static object result;
-            static SqlConnection sql_connection;
-            static TypeDependencyResovler type_dependency_resolver;
         }
 
         [Concern(typeof (BasicContainer))]
