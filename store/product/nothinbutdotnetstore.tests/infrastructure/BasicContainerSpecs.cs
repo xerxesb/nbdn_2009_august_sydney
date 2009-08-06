@@ -26,7 +26,7 @@ namespace nothinbutdotnetstore.tests.infrastructure
                 sql_connection = new SqlConnection();
 
                 type_dependency_resolver = the_dependency<TypeDependencyResovler>();
-                type_dependency_resolver.Stub(x => x.resolve_concrete_type<IDbConnection>()).Return(sql_connection);
+                type_dependency_resolver.Stub(x => x.resolve_concrete_type(typeof(IDbConnection))).Return(sql_connection);
             };
 
             because b = () => 
@@ -75,8 +75,8 @@ namespace nothinbutdotnetstore.tests.infrastructure
         [Concern(typeof (BasicContainer))]
         public class when_trying_to_get_an_instance_of_a_type_that_has_no_resolver_registered : concern
         {
-            because b = () => {
-
+            because b = () => 
+            {
                 doing(() => sut.instance_of<IDbConnection>());
             };
 
