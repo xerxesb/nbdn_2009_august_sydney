@@ -59,12 +59,16 @@
     <Compile Include="infrastructure\Specification.cs" />
     <Compile Include="tasks\AddResolverToContainer.cs" />
     <Compile Include="tasks\ApplicationStartup.cs" />
+    <Compile Include="tasks\ApplicationStartupCommandConstructor.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />
     <Compile Include="tasks\startup\ApplicationStartupCommand.cs" />
+    <Compile Include="tasks\startup\ApplicationStartupCommandConstructorImplementation.cs" />
+    <Compile Include="tasks\startup\ApplicationStartupPipelineBuilder.cs" />
     <Compile Include="tasks\startup\ConfigureCoreServices.cs" />
     <Compile Include="tasks\startup\ConfigureFrontController.cs" />
     <Compile Include="tasks\startup\ConfigureTheApplicationRoutes.cs" />
     <Compile Include="tasks\startup\ConfigureTheServiceLayer.cs" />
+    <Compile Include="tasks\startup\Start.cs" />
     <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewMainDepartments.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewProductsInDepartments.cs" />
