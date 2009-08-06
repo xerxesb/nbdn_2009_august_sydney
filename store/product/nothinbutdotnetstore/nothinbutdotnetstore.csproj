@@ -50,7 +50,7 @@
     <Compile Include="infrastructure\containers\basic\BasicContainer.cs" />
     <Compile Include="infrastructure\containers\basic\ContainerResolverException.cs" />
     <Compile Include="infrastructure\containers\basic\ResolverNotRegisteredException.cs" />
-    <Compile Include="infrastructure\containers\basic\TypeDependencyResovler.cs" />
+    <Compile Include="infrastructure\containers\basic\TypeDependencyResolver.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\Id.cs" />
     <Compile Include="infrastructure\Specification.cs" />
@@ -75,6 +75,7 @@
     <Compile Include="web\core\frontcontroller\RawRequestCommand.cs" />
     <Compile Include="web\core\frontcontroller\RequestCommand.cs" />
     <Compile Include="web\core\frontcontroller\RequestCommandImplementation.cs" />
+    <Compile Include="web\core\frontcontroller\SecuredCommandRegistry%27.cs" />
     <Compile Include="web\core\frontcontroller\stubs\StubIncomingRequest.cs" />
     <Compile Include="web\core\frontcontroller\stubs\StubItemRendererRegistry.cs" />
     <Compile Include="web\core\frontcontroller\stubs\StubWebFormViewRegistry.cs" />
@@ -90,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="infrastructure\containers\castle\" />
+    <Folder Include="infrastructure\logging\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

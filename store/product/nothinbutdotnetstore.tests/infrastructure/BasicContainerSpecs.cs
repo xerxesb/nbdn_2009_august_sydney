@@ -25,7 +25,7 @@ namespace nothinbutdotnetstore.tests.infrastructure
             {
                 sql_connection = new SqlConnection();
 
-                type_dependency_resolver = the_dependency<TypeDependencyResovler>();
+                type_dependency_resolver = the_dependency<TypeDependencyResolver>();
                 type_dependency_resolver.Stub(x => x.resolve_concrete_type(typeof(IDbConnection))).Return(sql_connection);
             };
 
@@ -42,7 +42,7 @@ namespace nothinbutdotnetstore.tests.infrastructure
 
             static IDbConnection result;
             static SqlConnection sql_connection;
-            static TypeDependencyResovler type_dependency_resolver;
+            static TypeDependencyResolver type_dependency_resolver;
         }
 
         [Concern(typeof (BasicContainer))]
@@ -52,7 +52,7 @@ namespace nothinbutdotnetstore.tests.infrastructure
             {
                 sql_connection = new SqlConnection();
 
-                type_dependency_resolver = the_dependency<TypeDependencyResovler>();
+                type_dependency_resolver = the_dependency<TypeDependencyResolver>();
                 type_dependency_resolver.Stub(x => x.resolve_concrete_type(typeof(IDbConnection))).Return(sql_connection);
             };
 
@@ -69,7 +69,7 @@ namespace nothinbutdotnetstore.tests.infrastructure
 
             static object result;
             static SqlConnection sql_connection;
-            static TypeDependencyResovler type_dependency_resolver;
+            static TypeDependencyResolver type_dependency_resolver;
         }
 
         //[Concern(typeof (BasicContainer))]
@@ -96,7 +96,7 @@ namespace nothinbutdotnetstore.tests.infrastructure
             {
                 inner_exception = new Exception();
 
-                type_dependency_resolver = the_dependency<TypeDependencyResovler>();
+                type_dependency_resolver = the_dependency<TypeDependencyResolver>();
                 type_dependency_resolver.Stub(x => x.resolve_concrete_type(typeof(IDbConnection))).Throw(inner_exception);
             };
 
@@ -114,7 +114,7 @@ namespace nothinbutdotnetstore.tests.infrastructure
             };
 
             static Exception inner_exception;
-            static TypeDependencyResovler type_dependency_resolver;
+            static TypeDependencyResolver type_dependency_resolver;
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Web;
+using developwithpassion.commons.core.infrastructure.containers;
 
 namespace nothinbutdotnetstore.web.core.frontcontroller
 {
@@ -8,7 +9,7 @@ namespace nothinbutdotnetstore.web.core.frontcontroller
 
         static public IncomingRequestFactory request_factory = x => null;
 
-        public RawHandler():this(new FrontControllerImplementation()) {}
+        public RawHandler() : this(IOC.get().instance_of<FrontController>()) {}
 
         public RawHandler(FrontController front_controller)
         {

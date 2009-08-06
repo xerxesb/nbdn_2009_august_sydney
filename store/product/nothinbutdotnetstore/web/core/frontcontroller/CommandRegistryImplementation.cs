@@ -1,20 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using nothinbutdotnetstore.infrastructure;
-using nothinbutdotnetstore.web.application.catalogbrowsing;
 
 namespace nothinbutdotnetstore.web.core.frontcontroller
 {
     public class CommandRegistryImplementation : CommandRegistry
     {
         IEnumerable<RequestCommand> commands;
-        public CommandRegistryImplementation() : this(build_default_command_set()) {}
-
-        static IEnumerable<RequestCommand> build_default_command_set()
-        {
-            yield return new RequestCommandImplementation(new AnySpecification<IncomingRequest>(),
-                                                          new ViewMainDepartments());
-        }
 
         public CommandRegistryImplementation(IEnumerable<RequestCommand> commands)
         {
