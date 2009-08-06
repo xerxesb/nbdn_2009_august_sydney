@@ -8,6 +8,7 @@
  using nothinbutdotnetstore.tasks.startup;
  using Rhino.Mocks;
  using developwithpassion.bdd.mbunit;
+ using developwithpassion.bdd.core.extensions;
 
 namespace nothinbutdotnetstore.tests.tasks
  {   
@@ -18,17 +19,35 @@ namespace nothinbutdotnetstore.tests.tasks
              context c = () =>
              {
                  commands = new List<ApplicationStartupCommand>();
-                 command_constructor = the_dependency<ApplicationStartupCommandConstructor>();
+                 command_factory = the_dependency<ApplicationStartupCommandFactory>();
+                 registry = the_dependency<ContainerResolverRegistry>();
+
+                 provide_a_basic_sut_constructor_argument(commands);
+                 provide_a_basic_sut_constructor_argument(typeof(FakeApplicationStartupCommand));
              };
 
-             public override ApplicationStartupPipelineBuilder create_sut()
+
+             protected static ApplicationStartupCommandFactory command_factory;
+             protected static IList<ApplicationStartupCommand> commands;
+             static protected ContainerResolverRegistry registry;
+         }
+
+         [Concern(typeof(ApplicationStartupPipelineBuilder))]
+         public class kwhen_created_with_an_initial_command_type : concern
+         {
+             context c = () =>
              {
-                 return new ApplicationStartupPipelineBuilder(command_constructor, commands);
-             }
+                 startup_command = an<ApplicationStartupCommand>();
+                 command_factory.Stub(x => x.create(typeof (FakeApplicationStartupCommand), registry)).Return(startup_command);
+             };
+        
+             it should_add_the_instance_of_the_initial_command_created_by_the_factory_to_its_set_of_commands_to_run = () =>
+             {
+                 commands.should_contain(startup_command);
+             };
 
-             protected static ApplicationStartupCommandConstructor command_constructor;
-             protected static List<ApplicationStartupCommand> commands;
 
+             static ApplicationStartupCommand startup_command;
          }
 
          [Concern(typeof(ApplicationStartupPipelineBuilder))]
@@ -37,7 +56,7 @@ namespace nothinbutdotnetstore.tests.tasks
              context c = () =>
              {
                  startup_command = an<ApplicationStartupCommand>();
-                 command_constructor.Stub(x => x.create(null, null)).IgnoreArguments().Return(startup_command);
+                 command_factory.Stub(x => x.create(null, null)).IgnoreArguments().Return(startup_command);
              };
 
 
@@ -46,7 +65,7 @@ namespace nothinbutdotnetstore.tests.tasks
                  result = sut.followed_by<ApplicationStartupCommand>();
              };
         
-             it should_construct_a_instance_of_the_command_with_its_container_registry = () =>
+             it should_add_the_command_that_was_created_by_the_application_command_factory_to_its_list_of_commands_to_run = () =>
              {
                  commands.should_contain(startup_command);
              };
@@ -59,18 +78,18 @@ namespace nothinbutdotnetstore.tests.tasks
              static ApplicationStartupCommand startup_command;
              static ApplicationStartupPipelineBuilder result;
          }
-         
+
          [Concern(typeof(ApplicationStartupPipelineBuilder))]
          public class when_finishing_pipeline : concern
          {
-             it should_add_command_the_pipeline_is_finished_by = () =>
+             it should_add_the_command_to_the_pipeline_is_finished_by = () =>
              {
                  commands.should_contain(last_command);
              };
 
              it should_run_all_commands = () =>
              {
-                 commands.ForEach(command => command.received(x=>x.run()));
+                 commands.each(command => command.received(x=>x.run()));
              };
 
              because b = () =>
@@ -83,7 +102,7 @@ namespace nothinbutdotnetstore.tests.tasks
                  first_command = an<ApplicationStartupCommand>();
                  last_command = an<ApplicationStartupCommand>();
                  commands.Add(first_command);
-                 command_constructor.Stub(x => x.create(null, null)).IgnoreArguments().Return(last_command);
+                 command_factory.Stub(x => x.create(null, null)).IgnoreArguments().Return(last_command);
                  
              };
 

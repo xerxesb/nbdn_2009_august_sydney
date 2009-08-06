@@ -61,12 +61,12 @@
     <Compile Include="infrastructure\Specification.cs" />
     <Compile Include="tasks\AddResolverToContainer.cs" />
     <Compile Include="tasks\ApplicationStartup.cs" />
-    <Compile Include="tasks\ApplicationStartupCommandConstructor.cs" />
+    <Compile Include="tasks\ApplicationStartupCommandFactory.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />
     <Compile Include="tasks\CatalogTasksImplementation.cs" />
     <Compile Include="tasks\DepartmentItemMapper.cs" />
     <Compile Include="tasks\startup\ApplicationStartupCommand.cs" />
-    <Compile Include="tasks\startup\ApplicationStartupCommandConstructorImplementation.cs" />
+    <Compile Include="tasks\startup\ApplicationStartupCommandFactoryImplementation.cs" />
     <Compile Include="tasks\startup\ApplicationStartupPipelineBuilder.cs" />
     <Compile Include="tasks\startup\ConfigureCoreServices.cs" />
     <Compile Include="tasks\startup\ConfigureFrontController.cs" />

@@ -2,7 +2,7 @@ using System;
 
 namespace nothinbutdotnetstore.tasks.startup
 {
-    public class ApplicationStartupCommandConstructorImplementation : ApplicationStartupCommandConstructor
+    public class ApplicationStartupCommandFactoryImplementation : ApplicationStartupCommandFactory
     {
         public ApplicationStartupCommand create(Type command_type, ContainerResolverRegistry container_registry)
         {
