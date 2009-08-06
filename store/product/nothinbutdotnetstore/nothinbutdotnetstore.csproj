@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="developwithpassion.commons.core.infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\thirdparty\developwithpassion.commons\developwithpassion.commons.core.infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
@@ -43,6 +47,7 @@
   <ItemGroup>
     <Compile Include="dto\DepartmentItem.cs" />
     <Compile Include="dto\ProductItem.cs" />
+    <Compile Include="infrastructure\containers\basic\BasicContainer.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\Id.cs" />
     <Compile Include="infrastructure\Specification.cs" />
@@ -79,6 +84,9 @@
     <Compile Include="web\core\frontcontroller\ViewPage.cs" />
     <Compile Include="web\core\frontcontroller\WebFormViewRegistry.cs" />
     <Compile Include="web\core\frontcontroller\WebFormRender.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="infrastructure\containers\castle\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

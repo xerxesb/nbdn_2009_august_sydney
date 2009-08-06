@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="infrastructure\BasicContainerSpecs.cs" />
     <Compile Include="infrastructure\EnumerableExtensionsSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
