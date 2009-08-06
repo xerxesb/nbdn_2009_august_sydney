@@ -1,5 +1,3 @@
-using nothinbutdotnetstore.web.core.frontcontroller.stubs;
-
 namespace nothinbutdotnetstore.web.core.frontcontroller
 {
     public class DisplayEngineImplementation : DisplayEngine

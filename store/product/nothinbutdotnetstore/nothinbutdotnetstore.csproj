@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="domain\Department.cs" />
+    <Compile Include="domain\DepartmentRepository.cs" />
     <Compile Include="dto\DepartmentItem.cs" />
     <Compile Include="dto\ProductItem.cs" />
     <Compile Include="infrastructure\Command.cs" />
@@ -60,6 +62,8 @@
     <Compile Include="tasks\AddResolverToContainer.cs" />
     <Compile Include="tasks\ApplicationStartup.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />
+    <Compile Include="tasks\CatalogTasksImplementation.cs" />
+    <Compile Include="tasks\DepartmentItemMapper.cs" />
     <Compile Include="tasks\startup\ApplicationStartupCommand.cs" />
     <Compile Include="tasks\startup\ConfigureCoreServices.cs" />
     <Compile Include="tasks\startup\ConfigureFrontController.cs" />

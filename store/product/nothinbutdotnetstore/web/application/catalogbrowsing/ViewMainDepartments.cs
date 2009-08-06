@@ -1,5 +1,4 @@
 using nothinbutdotnetstore.tasks;
-using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.core.frontcontroller;
 
 namespace nothinbutdotnetstore.web.application.catalogbrowsing
