@@ -12,8 +12,6 @@ namespace nothinbutdotnetstore.web.core.frontcontroller
 
         WebFormViewRegistry view_registry;
 
-        public WebFormRender() : this(new StubWebFormViewRegistry()) {}
-
         public WebFormRender(WebFormViewRegistry view_registry)
         {
             this.view_registry = view_registry;

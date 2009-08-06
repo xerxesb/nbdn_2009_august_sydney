@@ -9,7 +9,6 @@ namespace nothinbutdotnetstore.web.application.catalogbrowsing
         DisplayEngine display_engine;
         CatalogTasks catalog_tasks;
 
-        public ViewMainDepartments() :this(new DisplayEngineImplementation(),new StubCatalogTasks()){}
 
         public ViewMainDepartments(DisplayEngine display_engine, CatalogTasks catalog_tasks)
         {

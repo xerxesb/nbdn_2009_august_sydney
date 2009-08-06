@@ -48,13 +48,15 @@
     <Compile Include="dto\DepartmentItem.cs" />
     <Compile Include="dto\ProductItem.cs" />
     <Compile Include="infrastructure\containers\basic\BasicContainer.cs" />
+    <Compile Include="infrastructure\containers\basic\ContainerItemResolver.cs" />
+    <Compile Include="infrastructure\containers\basic\ContainerItemResolverImplementation.cs" />
     <Compile Include="infrastructure\containers\basic\ContainerResolverException.cs" />
     <Compile Include="infrastructure\containers\basic\ResolverNotRegisteredException.cs" />
-    <Compile Include="infrastructure\containers\basic\TypeDependencyResolver.cs" />
+    <Compile Include="infrastructure\containers\basic\IsSpecificType.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\Id.cs" />
     <Compile Include="infrastructure\Specification.cs" />
-    <Compile Include="MessageGenerator.cs" />
+    <Compile Include="tasks\ApplicationStartup.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />
     <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewMainDepartments.cs" />
@@ -75,9 +77,7 @@
     <Compile Include="web\core\frontcontroller\RawRequestCommand.cs" />
     <Compile Include="web\core\frontcontroller\RequestCommand.cs" />
     <Compile Include="web\core\frontcontroller\RequestCommandImplementation.cs" />
-    <Compile Include="web\core\frontcontroller\SecuredCommandRegistry%27.cs" />
     <Compile Include="web\core\frontcontroller\stubs\StubIncomingRequest.cs" />
-    <Compile Include="web\core\frontcontroller\stubs\StubItemRendererRegistry.cs" />
     <Compile Include="web\core\frontcontroller\stubs\StubWebFormViewRegistry.cs" />
     <Compile Include="web\core\frontcontroller\TransferAction.cs" />
     <Compile Include="web\core\frontcontroller\ViewPageImplementation.cs">

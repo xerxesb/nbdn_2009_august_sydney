@@ -6,7 +6,6 @@ namespace nothinbutdotnetstore.web.core.frontcontroller
     {
         ItemRendererRegistry renderers;
 
-        public DisplayEngineImplementation():this(new StubItemRendererRegistry()) {}
 
         public DisplayEngineImplementation(ItemRendererRegistry renderers)
         {
