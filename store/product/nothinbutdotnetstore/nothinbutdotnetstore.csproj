@@ -102,10 +102,12 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="web\core\frontcontroller\WebFormViewFactory.cs" />
-    <Compile Include="web\core\frontcontroller\ViewInformation.cs" />
+    <Compile Include="web\core\frontcontroller\WebFormViewInformation.cs" />
     <Compile Include="web\core\frontcontroller\ViewPage.cs" />
+    <Compile Include="web\core\frontcontroller\WebFormViewInformationNotMappedException.cs" />
     <Compile Include="web\core\frontcontroller\WebFormViewRegistry.cs" />
     <Compile Include="web\core\frontcontroller\WebFormRender.cs" />
+    <Compile Include="web\core\frontcontroller\WebFormViewRegistryImplementation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="infrastructure\containers\castle\" />
