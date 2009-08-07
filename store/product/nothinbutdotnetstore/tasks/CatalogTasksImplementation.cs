@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using nothinbutdotnetstore.domain;
@@ -13,12 +14,12 @@ namespace nothinbutdotnetstore.tasks
         ProductRepository  product_repository;
         ProductItemMapper product_item_mapper;
         
-        public CatalogTasksImplementation(DepartmentRepository department_repository, DepartmentItemMapper departmentItemMapper, ProductRepository product_repository, ProductItemMapper product_item_mapper)
+        public CatalogTasksImplementation(DepartmentRepository department_repository, DepartmentItemMapper department_item_mapper, ProductRepository product_repository, ProductItemMapper product_item_mapper)
         {
             this.department_repository = department_repository;
             this.product_item_mapper = product_item_mapper;
             this.product_repository = product_repository;
-            this.departmentItemMapper = departmentItemMapper;
+            this.departmentItemMapper = department_item_mapper;
         }
 
         public IEnumerable<DepartmentItem> get_all_main_departments()
